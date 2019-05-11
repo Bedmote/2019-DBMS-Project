@@ -442,6 +442,16 @@ void FPTree::printTree() {
 // if no tree is reloaded, return FALSE
 // need to call the PALlocator
 bool FPTree::bulkLoading() {
-    // TODO
+    // TODO:
+    //判断目标文件夹中有没有数据文件
+    PPointer start = getStartPointer(); // get first leaf's  PPointer of fptree
+    if (ifLeafExist(start)) {//有数据文件
+        for (int i = 0; i < getFreeNum(); i ++) {
+            PPointer temp;
+            char * pmem_addr;
+            getLeaf(temp, pmem_addr);
+        }
+        return true;
+    }
     return false;
 }
